@@ -1,0 +1,33 @@
+﻿@model PatientRegistration.Models.Patient
+@{
+    ViewBag.Title = "LogPageLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LogPageLoad</h2>
+@using (Html.BeginForm("Log_Click", "Login", FormMethod.Post))
+{
+
+    <div>
+        <label>Name:</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.name)
+        @Html.ValidationMessageFor(m => m.name)
+    </div>
+
+    <div>
+        <label>Aadharno:</label>
+    </div>
+    <div>
+        @Html.PasswordFor(m => m.aadharno)
+        @Html.ValidationMessageFor(m => m.aadharno)
+    </div>
+
+    <div>
+        <input type="submit" value="Login" />
+        @Html.DisplayFor(m => m.Msg)
+    </div>
+}
+
+

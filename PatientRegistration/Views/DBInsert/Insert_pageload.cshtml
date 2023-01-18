@@ -1,0 +1,81 @@
+﻿@model PatientRegistration.Models.Patient
+@{
+    ViewBag.Title = "Insert_pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insert_pageload</h2>
+<div>
+    @using (Html.BeginForm("Insert_click", "DBInsert", FormMethod.Post))
+    {
+        <div>
+            <label>FullName</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+
+        <div>
+            <label>Address</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.address)
+            @Html.ValidationMessageFor(m => m.address)
+        </div>
+
+        <div>
+            <label>Pin Code</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.pin)
+            @Html.ValidationMessageFor(m => m.pin)
+        </div>
+
+        <div>
+            <label>Aadhar Number</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.aadhar)
+            @Html.ValidationMessageFor(m => m.aadhar)
+        </div>
+
+        <div>
+            <label>Mobile Number</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.mobile)
+            @Html.ValidationMessageFor(m => m.mobile)
+        </div>
+
+        <div>
+            <label>Blood Group</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.blood)
+
+        </div>
+
+        <div>
+            <label>Visit Date</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.date)
+
+        </div>
+
+        <div>
+            <label>Purpose of Visit</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.purpose)
+            
+        </div>
+
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m=>m.msg)
+        </div>
+    }
+</div>
+

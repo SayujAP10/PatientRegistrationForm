@@ -1,0 +1,77 @@
+﻿@model PatientRegistration.Models.Patient
+@{
+    ViewBag.Title = "UserProfileLoad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserProfileLoad</h2>
+
+@using (Html.BeginForm("Profile_Update", "UProfile", FormMethod.Post))
+{
+    <div>
+        <label>Name</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.name)
+    </div>
+
+    <div>
+        <label>Address</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.address)
+    </div>
+
+    <div>
+        <label>Pin code</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.pin)
+    </div>
+
+    <div>
+        <label>Aadhar Number</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.aadhar)
+    </div>
+
+    <div>
+        <label>Mobile Number</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.mobile)
+    </div>
+
+    <div>
+        <label>Blood Group</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.blood)
+    </div>
+
+    <div>
+        <label>Visit Date</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.visit_date)
+    </div>
+
+    <div>
+        <label>Purpose of Visit</label>
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.purpose)
+    </div>
+
+
+
+    <div>
+        <input type="submit" value="Edit" />
+        @Html.DisplayFor(m => m.msg)
+    </div>
+
+    <div>
+        @Html.ActionLink("Back to Home Page", "Home", "Login")
+    </div>
+}
